@@ -1,0 +1,35 @@
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.form-section,
+.news-section {
+  margin: 20px 0;
+}
+
+.form div {
+  margin-bottom: 10px;
+}
+
+.form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form input,
+.form textarea {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.news-section div {
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+.news-section img {
+  max-width: 100%;
+  height: auto;
+}
