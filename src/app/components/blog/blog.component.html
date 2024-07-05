@@ -1,0 +1,67 @@
+<div class="container">
+  <h1>Blog de Noticias</h1>
+  <div class="form-section">
+    <h2>Agregar Noticia</h2>
+    <div class="form">
+      <div>
+        <label for="title">Título:</label>
+        <input
+          type="text"
+          id="title"
+          [(ngModel)]="newNews.title"
+          name="title"
+          required
+        />
+      </div>
+      <div>
+        <label for="image">Imagen URL:</label>
+        <input
+          type="text"
+          id="image"
+          [(ngModel)]="newNews.image"
+          name="image"
+          required
+        />
+      </div>
+      <div>
+        <label for="content">Contenido:</label>
+        <textarea
+          id="content"
+          [(ngModel)]="newNews.content"
+          name="content"
+          required
+        ></textarea>
+      </div>
+      <div>
+        <label for="date">Fecha de Publicación:</label>
+        <input
+          type="date"
+          id="date"
+          [(ngModel)]="newNews.date"
+          name="date"
+          required
+        />
+      </div>
+      <button type="button" (click)="addNews()">Publicar Noticia</button>
+    </div>
+  </div>
+
+  <div class="news-section">
+    <h2>Noticias</h2>
+    <ng-template [ngIf]="newsList.length === 0">
+      <p>No hay noticias disponibles.</p>
+    </ng-template>
+    <ng-template [ngIf]="newsList.length > 0">
+      <ng-container *for="let news of newsList">
+        <div>
+          <h3 [innerHTML]="news.title"></h3>
+          <img [src]="news.image" alt="Imagen de la noticia" />
+          <p [innerHTML]="news.content"></p>
+          <p>
+            <em>{{ news.date }}</em>
+          </p>
+        </div>
+      </ng-container>
+    </ng-template>
+  </div>
+</div>
