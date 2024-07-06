@@ -12,16 +12,16 @@ import { FormsModule } from '@angular/forms';
 export class BlogComponent {
   newsList = [
     {
-      title: 'Noticia Inicial 1',
-      image: 'https://via.placeholder.com/150',
-      content: 'Contenido de la noticia inicial 1',
-      date: '2024-06-22'
+      title: 'Noticia de ejemplo 1',
+      image: 'https://via.placeholder.com/100',
+      content: 'Contenido de la noticia ejemplo 1',
+      date: '2024-07-06'
     },
     {
-      title: 'Noticia Inicial 2',
-      image: 'https://via.placeholder.com/150',
-      content: 'Contenido de la noticia inicial 2',
-      date: '2024-06-22'
+      title: 'Noticia de ejemplo 2',
+      image: 'https://via.placeholder.com/100',
+      content: 'Contenido de la noticia ejemplo 2',
+      date: '2024-07-05'
     }
   ];
 
@@ -37,7 +37,7 @@ export class BlogComponent {
       this.newsList.push({ ...this.newNews });
       this.newNews = { title: '', image: '', content: '', date: '' };
     } else {
-      alert('Por favor, completa todos los campos');
+      alert('Completa todos los campos para publicar la noticia');
     }
   }
 
