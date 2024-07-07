@@ -1,6 +1,6 @@
 <div class="container">
-  <h1>Blog de Noticias</h1>
   <div class="form-section">
+    <h1>Blog de Noticias</h1>
     <h2>Agregar Noticia</h2>
     <div class="form">
       <div>
@@ -42,7 +42,7 @@
           required
         />
       </div>
-      <button type="button" (click)="addNews()">Publicar Noticia</button>
+      <button type="button" (click)="getData()">Publicar Noticia</button>
     </div>
   </div>
 
@@ -52,7 +52,7 @@
       <p>No hay noticias disponibles.</p>
     </ng-template>
     <ng-template [ngIf]="newsList.length > 0">
-      <ng-container *for="let news of newsList">
+      <ng-container *ngFor="let news of newsList">
         <div>
           <h3 [innerHTML]="news.title"></h3>
           <img [src]="news.image" alt="Imagen de la noticia" />

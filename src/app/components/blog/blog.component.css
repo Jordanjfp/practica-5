@@ -1,0 +1,81 @@
+/* Estilo general */
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Sección del formulario */
+.form-section {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form div {
+  margin-bottom: 10px;
+}
+
+.form label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form input,
+.form textarea {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.form button {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+}
+
+.form button:hover {
+  background-color: #0056b3;
+}
+
+/* Sección de noticias */
+.news-section {
+  flex: 2;
+  margin-left: 20px;
+}
+
+.news-section h2 {
+  margin-top: 0;
+}
+
+.news-section div {
+  margin-bottom: 20px;
+  border-bottom: 1px solid lightgray;
+  padding-bottom: 10px;
+}
+
+.news-section h3 {
+  margin: 0 0 10px 0;
+}
+
+.news-section img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.news-section p {
+  margin: 0 0 10px 0;
+}
+
+.news-section p em {
+  font-size: 0.9em;
+  color: lightgray;
+}
