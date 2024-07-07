@@ -1,44 +1,40 @@
-import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { Component, EventEmitter, Output, OnInit } from '@angular/core';
+import { INews } from '../interfaces/inews.interface';
 
 @Component({
   selector: 'app-blog',
-  standalone: true,
-  imports: [FormsModule, CommonModule],
   templateUrl: './blog.component.html',
-  styleUrl: './blog.component.css'
+  styleUrls: ['./blog.component.css']
 })
-export class BlogComponent {
-  newsList = [
-    {
-      title: 'Noticia de ejemplo 1',
-      image: 'https://via.placeholder.com/100',
-      content: 'Contenido de la noticia ejemplo 1',
-      date: '2024-07-06'
-    },
-    {
-      title: 'Noticia de ejemplo 2',
-      image: 'https://via.placeholder.com/100',
-      content: 'Contenido de la noticia ejemplo 2',
-      date: '2024-07-05'
-    }
-  ];
+export class BlogComponent implements OnInit {
+  newNews: INews = { title: "", image: "", content: "", date: "" };
+  newsList: INews[] = [];
 
-  newNews = {
-    title: '',
-    image: '',
-    content: '',
-    date: ''
-  };
+  @Output() newsEmitida: EventEmitter<INews> = new EventEmitter();
 
-  addNews() {
-    if (this.newNews.title && this.newNews.image && this.newNews.content && this.newNews.date) {
-      this.newsList.push({ ...this.newNews });
-      this.newNews = { title: '', image: '', content: '', date: '' };
-    } else {
-      alert('Completa todos los campos para publicar la noticia');
-    }
+  ngOnInit(): void {
+    this.newsList = [
+      {
+        title: "Noticia 1",
+        image: "https://via.placeholder.com/150",
+        content: "Contenido de la noticia 1",
+        date: "2024-06-01"
+      },
+      {
+        title: "Noticia 2",
+        image: "https://via.placeholder.com/150",
+        content: "Contenido de la noticia 2",
+        date: "2024-06-02"
+      }
+    ];
   }
 
+  getData(): void {
+    if (this.newNews.title && this.newNews.image && this.newNews.content && this.newNews.date) {
+      this.newsList.push(this.newNews);
+      this.newNews = { title: "", image: "", content: "", date: "" };
+    } else {
+      alert('Los campos no pueden estar vacíos');
+    }
+  }
 }
